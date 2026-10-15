@@ -12,7 +12,7 @@ namespace ComputeShopApi.Models
         public Guid Id { get; set; }
         [Column(TypeName = "varchar(37)")]
         public string brand { get; set; }
-        public object Brand { get; internal set; }
+        public string Brand { get; internal set; }
         [Column(TypeName = "varchar(30)")]
         public string type { get; set; }
         public string Type { get; internal set; }
@@ -23,11 +23,9 @@ namespace ComputeShopApi.Models
         public int Memory { get; set; }
         
         public DateTime CreatedTime { get; set; }
-        public ICollection<Computer> Computers { get; set; }
 
         [JsonIgnore]
-
         public Osystem os { get; set; }
-        public object Os { get; internal set; }
+        public Guid OsId { get; internal set; }
     }
 }

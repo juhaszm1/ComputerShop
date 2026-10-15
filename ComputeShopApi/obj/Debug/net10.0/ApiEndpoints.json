@@ -3,7 +3,7 @@
     "ContainingType": "ComputeShopApi.Controllers.ComputerController",
     "Method": "AddNewComputer",
     "RelativePath": "addNewComputer",
-    "HttpMethod": "GET",
+    "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
@@ -118,6 +118,16 @@
         "IsRequired": true
       }
     ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ComputeShopApi.Controllers.SystemController",
+    "Method": "GetAllOsWithComputers",
+    "RelativePath": "osystems/allOsWithComputers",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": []
   },
   {

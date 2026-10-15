@@ -3,6 +3,7 @@ using ComputeShopApi.Models.DTOs;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace ComputeShopApi.Controllers
 {
@@ -81,6 +82,13 @@ namespace ComputeShopApi.Controllers
             }
 
             return StatusCode(404, new { message = "Sikertelen frissítés." });
+        }
+
+        [HttpGet("allOsWithComputers")]
+        public object GetAllOsWithComputers()
+        {
+            var result = _context.Osystems.Include(o => o.Computers);
+            return StatusCode(200, new { message = "Sikeres lekérdezés.", result = result });
         }
     }
 }

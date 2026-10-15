@@ -41,7 +41,7 @@ namespace ComputeShopApi.Controllers
 
         }
 
-        [HttpGet("addNewComputer")]
+        [HttpPost("addNewComputer")]
         public object AddNewComputer(AddNewComputerDto newComputer)
         {
             var computer = new Computer
@@ -52,7 +52,7 @@ namespace ComputeShopApi.Controllers
                 Display = newComputer.Display,
                 Memory = newComputer.Memory,
                 CreatedTime = DateTime.Now,
-                Os = osystem
+                OsId = newComputer.OsId
             };
             if (computer != null)
             {
@@ -77,7 +77,7 @@ namespace ComputeShopApi.Controllers
                 computer.Type = updatedComputer.Type;
                 computer.Display = updatedComputer.Display;
                 computer.Memory = updatedComputer.Memory;
-                computer.Os = osystem;
+                computer.OsId = updatedComputer.OsId;
                 context.SaveChanges();
                 return StatusCode(200, new { message = "Sikeres frissítés.", result = computer });
             }

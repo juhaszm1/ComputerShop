@@ -41,7 +41,7 @@
       }
     },
     "/addNewComputer": {
-      "get": {
+      "post": {
         "tags": [
           "Computer"
         ],
@@ -229,6 +229,18 @@
             }
           }
         },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/osystems/allOsWithComputers": {
+      "get": {
+        "tags": [
+          "System"
+        ],
         "responses": {
           "200": {
             "description": "OK"
